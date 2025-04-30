@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    let celsius: Double = 25.0
+    
+    var fahrenheit: Double {
+        (celsius * 9 / 5) + 32
+        }
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            Text("Welcome to SwiftUI!")
+            Text("Temperature Conversion")
+                .font(.custom("Arial", size:24))
+                .bold()
+
+            Text("Celsius: \(celsius,specifier:"%.1f")°C")
+                        Text("Fahrenheit: \(fahrenheit, specifier: "%.1f")°F")
+            }
+            .padding()
         }
-        .padding()
     }
-}
 
 #Preview {
     ContentView()
